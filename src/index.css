@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0a081a;
+    color: #f1f5f9;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Rubber stamp style */
+.rubber-stamp {
+  border: 3.5px dashed #E04836;
+  color: #E04836;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  transform: rotate(-7deg);
+  mask-image: radial-gradient(circle, rgba(0,0,0,0.92) 60%, rgba(0,0,0,0.7) 100%);
+  user-select: none;
+}
+
+/* Paper rule border styling for the physical identity document */
+.paper-card {
+  background-color: #FFFDF8;
+  color: #0E1A2B;
+  border: 1px solid #E4DEC9;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.paper-ruled {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #ECE5D3 31px,
+    #ECE5D3 32px
+  );
+}
+
+@keyframes keeperFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-keeper-float {
+  animation: keeperFloat 6s ease-in-out infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

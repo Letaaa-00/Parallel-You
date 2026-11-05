@@ -1,0 +1,6 @@
+{
+  "name": "Parallel You — Interdimensional Identity Bureau",
+  "description": "A whimsical story quiz issuing official fictional identity credentials from across the multiverse.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
